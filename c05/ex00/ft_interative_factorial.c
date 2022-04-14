@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_interative_factorial.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyot <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 10:28:54 by zyot              #+#    #+#             */
-/*   Updated: 2022/04/13 14:13:48 by zyot             ###   ########.fr       */
+/*   Created: 2022/04/14 20:33:44 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 22:00:47 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+int	ft_iterative_factorial(int nb)
 {
-	char	something;
+        int result;
 
-	something = 'z';
-	while (something >= 'a')
+	result = 1;
+	while (nb > 0)
 	{
-		write(1, &something, 1);
-		something--;
+		result = result * nb;
+		nb--;
 	}
+	if (nb < 0)
+		return (0);
 }

@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyot <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 10:28:54 by zyot              #+#    #+#             */
-/*   Updated: 2022/04/13 14:13:48 by zyot             ###   ########.fr       */
+/*   Created: 2022/04/14 20:58:36 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 22:00:35 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+int	ft_recursive_factorial(int	nb)
 {
-	char	something;
-
-	something = 'z';
-	while (something >= 'a')
-	{
-		write(1, &something, 1);
-		something--;
-	}
+		int	result;
+		
+		result = 1;
+		if (nb > 0)
+		{
+			result *= nb * ft_recursive_factorial(nb - 1);
+			nb -= 1;
+		}
+		if (nb < 0)
+			return (0);
+		return (result);
 }

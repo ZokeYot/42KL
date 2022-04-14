@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyot <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 10:28:54 by zyot              #+#    #+#             */
-/*   Updated: 2022/04/13 14:13:48 by zyot             ###   ########.fr       */
+/*   Created: 2022/04/14 21:41:39 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 21:59:46 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+int	ft_fibonacci(int index)
 {
-	char	something;
-
-	something = 'z';
-	while (something >= 'a')
-	{
-		write(1, &something, 1);
-		something--;
-	}
+	if (index < 0)
+		return (-1);
+	if (index < 2)
+		return (index);
+	return (ft_fibonacci(index - 2) + ft_fibonacci(index - 1));
 }

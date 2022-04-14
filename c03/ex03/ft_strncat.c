@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyot <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 10:28:54 by zyot              #+#    #+#             */
-/*   Updated: 2022/04/13 14:13:48 by zyot             ###   ########.fr       */
+/*   Created: 2022/04/14 13:41:13 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 15:03:50 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_print_reverse_alphabet(void)
+char *ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	char	something;
+	unsigned int a;
+	unsigned int b;
 
-	something = 'z';
-	while (something >= 'a')
+	a = 0;
+	b = 0;
+	while (dest[a] != '\0')
 	{
-		write(1, &something, 1);
-		something--;
+		a++;
 	}
+	while (src[b] != '\0' && b < nb)
+	{
+		dest[a + b] = src[b];
+		b++;	
+	}
+	dest[a + b] = '\0';
+	return (dest);
+
 }

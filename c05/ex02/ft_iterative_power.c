@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyot <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 10:28:54 by zyot              #+#    #+#             */
-/*   Updated: 2022/04/13 14:13:48 by zyot             ###   ########.fr       */
+/*   Created: 2022/04/14 21:08:34 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 22:00:20 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+int	ft_iterative_power(int nb, int power)
 {
-	char	something;
+	int result;
 
-	something = 'z';
-	while (something >= 'a')
+	result = nb ;
+	if (power == 0)
+		return (1);
+	if (power < 0 )
+		return (0);
+	while (power > 1)
 	{
-		write(1, &something, 1);
-		something--;
+		result *= nb ;
+		power--;
 	}
+	return (result);
 }

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyot <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 10:28:54 by zyot              #+#    #+#             */
-/*   Updated: 2022/04/13 14:13:48 by zyot             ###   ########.fr       */
+/*   Created: 2022/04/14 15:18:05 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 15:23:28 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
-
-void	ft_print_reverse_alphabet(void)
+void	ft_putstr(char *str)
 {
-	char	something;
+	int counter;
 
-	something = 'z';
-	while (something >= 'a')
+	counter = 0;
+	while (str[counter] != '\0')
 	{
-		write(1, &something, 1);
-		something--;
+		write(1,&str[counter],1);
+		counter++;
 	}
+
 }

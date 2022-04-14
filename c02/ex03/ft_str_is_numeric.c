@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyot <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 10:28:54 by zyot              #+#    #+#             */
-/*   Updated: 2022/04/13 14:13:48 by zyot             ###   ########.fr       */
+/*   Created: 2022/04/14 11:25:38 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 11:32:08 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+int	ft_str_is_numeric(char *str)
 {
-	char	something;
+	int counter;
 
-	something = 'z';
-	while (something >= 'a')
+	counter = 0;
+	while(str[counter] != '\0')
 	{
-		write(1, &something, 1);
-		something--;
+		if (!(str[counter] >= 48 && str[counter] <= 57))
+			return (0);
+		counter++;
 	}
+	return (1);
 }

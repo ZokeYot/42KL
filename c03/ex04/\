@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 13:54:26 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 14:52:24 by root             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <stdio.h>
+char	*ft_strstr(char *str, char *to_find)
+{
+	int a;
+	int b;
+	char *result;
+	a = 0;
+	b = 0;
+	result = "";
+	while (str[a] != '\0')
+	{
+		if(str[a] == to_find[b] && str[a+1] != '\0')
+		{
+			result[b] = to_find[b];
+			a++;
+			b++;
+		}
+		else
+			a++;
+	}
+	return (result);
+}
+
+int main()
+{
+	char *something = "Hello World!!";
+	char *find = "World";
+	
+	printf("%s",ft_strstr(something,find));
+}

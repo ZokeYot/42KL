@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyot <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 10:28:54 by zyot              #+#    #+#             */
-/*   Updated: 2022/04/13 14:13:48 by zyot             ###   ########.fr       */
+/*   Created: 2022/04/14 10:23:44 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 10:29:20 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+int	ft_strlen(char *str)
 {
-	char	something;
-
-	something = 'z';
-	while (something >= 'a')
-	{
-		write(1, &something, 1);
-		something--;
+	int counter;
+	int length;
+        
+	counter = 0;
+	while (str[counter] != '\0')
+	{       
+		length = counter + 1;
+		counter++ ;
 	}
+	return (length);
 }

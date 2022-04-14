@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyot <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: root <zyot@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 10:28:54 by zyot              #+#    #+#             */
-/*   Updated: 2022/04/13 14:13:48 by zyot             ###   ########.fr       */
+/*   Created: 2022/04/14 12:24:52 by root              #+#    #+#             */
+/*   Updated: 2022/04/14 12:44:23 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+int	strcmp(char *s1, char *s2)
 {
-	char	something;
+	int counter;
 
-	something = 'z';
-	while (something >= 'a')
+	counter = 0;
+	while (s1[counter] == s2[counter] && (s1[counter] != '\0' || s2[counter] != '\0'))
 	{
-		write(1, &something, 1);
-		something--;
+	       counter++;
 	}
+	return (s1[counter] - s2[counter]);
 }
